@@ -8,28 +8,28 @@ const sites = [
     title: "Новости",
     description: "Присоединяйтесь к нашему Telegram каналу новостей",
     url: "#",
-    imageUrl: "/placeholder.svg",
+    imageUrl: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7?auto=format&fit=crop&q=80&w=800",
     icon: MessageSquare
   },
   {
     title: "ТГ Канал",
     description: "Наш основной Telegram канал",
     url: "#",
-    imageUrl: "/placeholder.svg",
+    imageUrl: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&q=80&w=800",
     icon: MessagesSquare
   },
   {
     title: "Генератор градиентов",
     description: "Создавайте красивые градиенты",
     url: "#",
-    imageUrl: "/placeholder.svg",
+    imageUrl: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?auto=format&fit=crop&q=80&w=800",
     icon: Palette
   },
   {
     title: "Создать картину",
     description: "Генерация изображений с помощью ИИ",
     url: "#",
-    imageUrl: "/placeholder.svg",
+    imageUrl: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&q=80&w=800",
     icon: ImageIcon
   }
 ];

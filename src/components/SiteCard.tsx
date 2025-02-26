@@ -2,19 +2,39 @@
 import { Card } from "@/components/ui/card";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
+import { LucideIcon } from "lucide-react";
 
 interface SiteCardProps {
   title: string;
   description: string;
   url: string;
   imageUrl?: string;
+  Icon?: LucideIcon;
 }
 
-const SiteCard = ({ title, description, url, imageUrl }: SiteCardProps) => {
+const SiteCard = ({ title, description, url, imageUrl, Icon }: SiteCardProps) => {
   return (
     <a href={url} target="_blank" rel="noopener noreferrer">
       <Card className="glass-card group h-full p-8 relative overflow-hidden border-2 border-white/10 hover:border-white/20">
         <div className="flex flex-col gap-6">
+          <div className="flex items-center justify-between">
+            {Icon && (
+              <motion.div
+                initial={{ scale: 0 }}
+                animate={{ scale: 1 }}
+                transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                className="p-3 rounded-full bg-white/10"
+              >
+                <Icon className="w-6 h-6 text-white" />
+              </motion.div>
+            )}
+            <motion.div
+              whileHover={{ scale: 1.2, rotate: 45 }}
+              transition={{ type: "spring", stiffness: 300 }}
+            >
+              <ArrowUpRight className="w-6 h-6 text-white/70 transition-colors group-hover:text-white" />
+            </motion.div>
+          </div>
           {imageUrl && (
             <motion.div 
               initial={{ opacity: 0, scale: 0.8 }}
@@ -29,31 +49,23 @@ const SiteCard = ({ title, description, url, imageUrl }: SiteCardProps) => {
               />
             </motion.div>
           )}
-          <div className="flex items-start justify-between gap-4">
-            <div>
-              <motion.h3 
-                initial={{ opacity: 0, x: -20 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-2xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400"
-              >
-                {title}
-              </motion.h3>
-              <motion.p 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.5, delay: 0.3 }}
-                className="text-content-subtle text-lg"
-              >
-                {description}
-              </motion.p>
-            </div>
-            <motion.div
-              whileHover={{ scale: 1.2, rotate: 45 }}
-              transition={{ type: "spring", stiffness: 300 }}
+          <div>
+            <motion.h3 
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="text-2xl font-bold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400"
             >
-              <ArrowUpRight className="w-6 h-6 text-white/70 transition-colors group-hover:text-white" />
-            </motion.div>
+              {title}
+            </motion.h3>
+            <motion.p 
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="text-content-subtle text-lg"
+            >
+              {description}
+            </motion.p>
           </div>
         </div>
         <motion.div

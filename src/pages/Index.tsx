@@ -1,13 +1,36 @@
 
 import { motion } from "framer-motion";
 import SiteCard from "@/components/SiteCard";
+import { MessageSquare, MessagesSquare, Palette, ImageIcon } from "lucide-react";
 
 const sites = [
   {
-    title: "ТГ Канал",
-    description: "Присоединяйтесь к нашему Telegram каналу",
+    title: "Новости",
+    description: "Присоединяйтесь к нашему Telegram каналу новостей",
     url: "#",
-    imageUrl: "/placeholder.svg"
+    imageUrl: "/placeholder.svg",
+    icon: MessageSquare
+  },
+  {
+    title: "ТГ Канал",
+    description: "Наш основной Telegram канал",
+    url: "#",
+    imageUrl: "/placeholder.svg",
+    icon: MessagesSquare
+  },
+  {
+    title: "Генератор градиентов",
+    description: "Создавайте красивые градиенты",
+    url: "#",
+    imageUrl: "/placeholder.svg",
+    icon: Palette
+  },
+  {
+    title: "Создать картину",
+    description: "Генерация изображений с помощью ИИ",
+    url: "#",
+    imageUrl: "/placeholder.svg",
+    icon: ImageIcon
   }
 ];
 
@@ -71,7 +94,7 @@ const Index = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 md:grid-cols-1 max-w-2xl mx-auto"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6 max-w-5xl mx-auto"
         >
           {sites.map((site) => (
             <motion.div
@@ -83,7 +106,7 @@ const Index = () => {
               }}
               whileTap={{ scale: 0.95 }}
             >
-              <SiteCard {...site} />
+              <SiteCard {...site} Icon={site.icon} />
             </motion.div>
           ))}
         </motion.div>

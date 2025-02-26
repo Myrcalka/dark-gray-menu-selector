@@ -8,12 +8,6 @@ const sites = [
     description: "Присоединяйтесь к нашему Telegram каналу",
     url: "#",
     imageUrl: "/placeholder.svg"
-  },
-  {
-    title: "Подбер",
-    description: "Специальный подбер контента",
-    url: "#",
-    imageUrl: "/placeholder.svg"
   }
 ];
 
@@ -77,7 +71,7 @@ const Index = () => {
           variants={containerVariants}
           initial="hidden"
           animate="visible"
-          className="grid grid-cols-1 md:grid-cols-2 gap-8"
+          className="grid grid-cols-1 md:grid-cols-1 max-w-2xl mx-auto"
         >
           {sites.map((site) => (
             <motion.div
